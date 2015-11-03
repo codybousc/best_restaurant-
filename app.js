@@ -1,1 +1,1 @@
-var bestRest = angular.module('bestRest', []); 
+bestRest = angular.module('bestRest', []); 
