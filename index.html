@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="bestRest">
+<head>
+  <meta charset="UTF-8">
+  <title>Best Restaurant</title>
+  <script src="js/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="js/RestController.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/mystyles.css">
+</head>
+<body>
+  <div class="container" ng-controller="RestController">
+    <div class="row">
+      <div class="col-md-12">
+        <ul>
+          <li ng-repeat="rest in goodies">
+            <strong class="restName">{{rest.name}}</strong> <br>
+            <span class="restDetails">
+            Food Type: {{rest.foodtype}} <br>
+            PriceRange: {{rest.priceRange}} <br>
+            Take Out: {{rest.takeOut}} <br>
+            Delivery: {{rest.delivery}}
+            Ratings: {{rest.ratings}}
+          </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div clas="col-med-12">
+        <span ng-click="addingRest = true" ng-hide="adding">
+          <button type="submit" class="btn btn-primary">Add Restaurant</button>
+        </span>
+        <span class="form-group" ng-show="addingRest" ng-submit="addingRest = false">
+        <form ng-submit="addRest()" class="form-inline" role="form">
+          <div class="form-group">
+            <input type="text" ng-model="name" class="form-control" placeholder="Restaurant Name">
+            <input type="text" ng-model="foodtype" class="form-control" placeholder="Type of food">
+            <input type="text" ng-model="priceRange" class="form-control" placeholder="Price Range">
+            <input type="text" ng-model="takeOut" class="form-control" placeholder="Takeout?">
+            <input type="text" ng-model="delivery" class="form-control" placeholder="Delivery?">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
