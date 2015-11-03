@@ -11,12 +11,15 @@
 </head>
 <body>
   <div class="container" ng-controller="RestController">
+    <header>
+      <h1>BEST RESTAURANTS IN TOWN</h1>
+    </header>
     <div class="row">
       <div class="col-md-12">
         <ul>
           <li ng-repeat="rest in goodies">
             <strong class="restName">
-              {{rest.name}}</strong> <br>
+              {{rest.name}}</strong> <a ng-click="deleteRest(rest)">Delete</a><br>
             <span class="restDetails">
               Food Type: {{rest.foodtype}} <br>
               PriceRange: {{rest.priceRange}} <br>

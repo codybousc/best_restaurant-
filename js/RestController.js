@@ -16,6 +16,11 @@ bestRest.controller('RestController', function RestController($scope) {
 
       });
     };
+  $scope.deleteRest = function(restaurant) {
+    var index = $scope.restaurants.indexOf(restaurant);
+    $scope.restaurants.splice(index, 1);
+  }; 
+
 
   $scope.goodies = $scope.restaurants;
 
