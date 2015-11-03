@@ -1,7 +1,11 @@
+body {
+  background-image: url(../css/images/bestRest.jpg); 
+}
+
 .restName {
   font-size: 35px;
 }
 
 .restDetails {
-  font-size: 15px; 
+  font-size: 15px;
 }
